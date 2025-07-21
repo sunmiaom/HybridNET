@@ -156,7 +156,7 @@ def rank_algorithms(metrics):
         for metric, ranks in rankings.items():
             weight = 2 if metric == 'Composite score' else 1
             total_rank += ranks[alg] * weight
-        综合排名[alg] = total_rank / (len(rankings) + 1)
+        rankings[alg] = total_rank / (len(rankings) + 1)
 
     # then sort by composite score.
     sorted_composite_rankings = sorted(composite_rankings.items(), key=lambda x: x[1])
